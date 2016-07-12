@@ -1,0 +1,44 @@
+dependencies {
+    // Spring Core dependencies
+    compile 'org.springframework:spring-context:+' // 3.1.0.RELEASE
+    compile 'org.springframework:spring-beans:+' // 3.1.0.RELEASE
+    compile 'org.springframework:spring-core:+' // 3.1.0.RELEASE
+    compile 'org.springframework:spring-jdbc:+' // 3.1.0.RELEASE
+    compile 'org.springframework:spring-tx:+' // 3.1.0.RELEASE
+    compile 'org.springframework:spring-web:+' // 3.1.0.RELEASE
+    compile 'org.springframework:spring-webmvc:+' // 3.1.0.RELEASE
+    compile 'org.springframework:spring-orm:+' // 3.1.0.RELEASE
+
+    // Spring Security dependencies 
+    compile 'org.springframework.security:spring-security-core:+' // 3.1.0.RELEASE
+    compile 'org.springframework.security:spring-security-web:+' // 3.1.0.RELEASE
+    compile 'org.springframework.security:spring-security-config:+' // 3.1.0.RELEASE
+    compile 'org.springframework.security:spring-security-acl:+' // 3.1.0.RELEASE
+    compile 'org.springframework.security:spring-security-taglibs:+' // 3.1.0.RELEASE
+
+    // 3d parties dependencies 
+    compile 'commons-logging:commons-logging:+' // 1.1.1
+    compile 'log4j:log4j:+' // 1.2.16
+    providedCompile 'javax.servlet:servlet-api:+' // 2.5
+    providedCompile 'javax.servlet:jsp-api:+' // 2.0
+    compile 'javax.servlet:jstl:+' // 1.1.2
+    compile 'taglibs:standard:+' // 1.1.2
+    compile 'mysql:mysql-connector-java:+' // 5.1.13
+
+    // ORM 
+    compile('org.hibernate:hibernate-annotations:+') { // 3.3.1.GA
+        exclude(module: 'hibernate')
+    }
+    // compile 'org.hibernate:hibernate-commons-annotations:+' //3.3.0.GA
+    compile 'org.hibernate:hibernate-core:+' // 3.3.1.GA
+
+    // Required for ACL
+    providedRuntime 'net.sf.ehcache:ehcache-core:+' // 2.4.7
+//    providedRuntime 'net.sf.ehcache:ehcache-terracotta:+' // 2.4.7
+    compile 'org.slf4j:slf4j-jdk14:+' // 1.5.2
+
+//    compile 'asm:asm:+' // 1.5.3
+    compile 'asm:asm-attrs:2.2.1' // 1.5.3
+    compile 'cglib:cglib:+' // 2.1_3
+    compile 'javassist:javassist:+' // 3.4.GA
+}
