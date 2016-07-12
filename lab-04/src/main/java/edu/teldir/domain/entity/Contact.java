@@ -3,7 +3,7 @@ package edu.teldir.domain.entity;
 import javax.persistence.*;
 
 /**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
+ * @author Anton German &lt;AGerman@epam.com&gt;
  * @version 1.0 10.04.12
  */
 @Entity

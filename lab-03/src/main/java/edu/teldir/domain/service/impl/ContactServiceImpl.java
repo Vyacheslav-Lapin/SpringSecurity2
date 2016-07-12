@@ -10,10 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 
-/**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
- * @version 1.0 10.04.12
- */
 @Service
 public class ContactServiceImpl implements ContactService {
     @Autowired
@@ -24,27 +20,32 @@ public class ContactServiceImpl implements ContactService {
 
 
     @Transactional
+    @Override
     public Collection<Contact> getAllContacts() {
         return personDao.getAllContacts();
     }
 
     @Transactional
+    @Override
     public Contact getContact(long id) {
         return personDao.getContact(id);
     }
 
     @Transactional
+    @Override
     public void create(Contact contact) {
         personDao.save(contact);
         securityService.initDefaultACL(contact);
     }
 
     @Transactional
+    @Override
     public void save(Contact contact) {
         personDao.save(contact);
     }
 
     @Transactional
+    @Override
     public void remove(Contact contact) {
         securityService.removeACL(contact);
         personDao.remove(contact);

@@ -5,7 +5,7 @@ import edu.teldir.domain.entity.Contact;
 import java.util.Collection;
 
 /**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
+ * @author Anton German &lt;AGerman@epam.com&gt;
  * @version 1.0 10.04.12
  */
 public interface ContactDao {

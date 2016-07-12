@@ -5,10 +5,6 @@ import edu.teldir.security.objects.PermissionObject;
 
 import java.util.Collection;
 
-/**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
- * @version 1.0 14.04.12
- */
 public interface SecurityService {
     void grantPermissions(DomainEntity entity, PermissionObject po);
     void removeACL(DomainEntity entity);

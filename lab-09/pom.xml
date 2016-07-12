@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.luxoft.edu.spring.springsecurity</groupId>
+    <groupId>com.epam.edu.spring.springsecurity</groupId>
     <artifactId>lab-09</artifactId>
     <version>1.0</version>
 

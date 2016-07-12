@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
+ * @author Anton German &lt;AGerman@epam.com&gt;
  * @version 1.0 11.04.12
  */
 @Controller

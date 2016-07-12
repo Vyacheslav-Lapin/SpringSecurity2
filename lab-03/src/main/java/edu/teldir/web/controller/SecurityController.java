@@ -19,10 +19,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
- * @version 1.0 14.04.12
- */
 @Controller
 @RequestMapping("/acl/*")
 public class SecurityController {
@@ -31,7 +27,7 @@ public class SecurityController {
     @Autowired
     private ContactService contactService;
 
-    private static final Map<String, Permission> permissionMap = new HashMap<String, Permission>();
+    private static final Map<String, Permission> permissionMap = new HashMap<>();
     static {
         permissionMap.put("Create", BasePermission.CREATE);
         permissionMap.put("Read", BasePermission.READ);
@@ -41,7 +37,7 @@ public class SecurityController {
     }
 
     @RequestMapping("/list.do")
-    public ModelAndView list(@RequestParam(value = "id", required = true) long id) {
+    public ModelAndView list(@RequestParam(value = "id") long id) {
         Contact contact = contactService.getContact(id);
         Collection<PermissionObject> permissions = securityService.getPermissions(contact);
 
@@ -52,7 +48,7 @@ public class SecurityController {
     }
 
     @RequestMapping("/edit.do")
-    public ModelAndView edit(@RequestParam(value = "id", required = true) long id) {
+    public ModelAndView edit(@RequestParam(value = "id") long id) {
         PermissionObjectBean bean = new PermissionObjectBean();
         bean.setDomainEntityId(id);
 
@@ -96,7 +92,7 @@ public class SecurityController {
     }
 
     @RequestMapping("/clear.do")
-    public ModelAndView reset(@RequestParam(value = "id", required = true) long id) {
+    public ModelAndView reset(@RequestParam(value = "id") long id) {
         Contact contact = contactService.getContact(id);
         securityService.initDefaultACL(contact);
         return new ModelAndView("redirect:/acl/list.do?id=" + id);

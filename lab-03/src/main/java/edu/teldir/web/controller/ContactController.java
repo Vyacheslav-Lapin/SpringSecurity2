@@ -14,10 +14,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
- * @version 1.0 11.04.12
- */
 @Controller
 @RequestMapping("/contact/*")
 public class ContactController {
@@ -28,10 +24,9 @@ public class ContactController {
     public ModelAndView list() {
         Collection<Contact> contacts = contactService.getAllContacts();
 
-        List<ContactBean> beans = new ArrayList<ContactBean>(contacts.size());
-        for (Contact contact : contacts) {
+        List<ContactBean> beans = new ArrayList<>(contacts.size());
+        for (Contact contact : contacts)
             beans.add(new ContactBean(contact));
-        }
 
         Collections.sort(beans);
 
@@ -44,9 +39,8 @@ public class ContactController {
     @RequestMapping("/edit.do")
     public ModelAndView load(@RequestParam(value = "id", required = false, defaultValue = "0") long id) {
         Contact contact = new Contact();
-        if (id > 0) {
+        if (id > 0)
             contact = contactService.getContact(id);
-        }
 
         ModelAndView result = new ModelAndView("contact/edit");
         result.addObject("contact", new ContactBean(contact));
@@ -57,19 +51,18 @@ public class ContactController {
     @RequestMapping("/save.do")
     public ModelAndView save(ContactBean contactBean) {
         Contact contact;
-        if (contactBean.getId() > 0) {
+        if (contactBean.getId() > 0)
             contact = contactService.getContact(contactBean.getId());
-        } else {
+        else
             contact = new Contact();
-        }
+
         contact.setName(contactBean.getName());
         contact.setTelephoneNumber(contactBean.getTelephoneNumber());
 
-        if (contactBean.getId() > 0) {
+        if (contactBean.getId() > 0)
             contactService.save(contact);
-        } else {
+        else
             contactService.create(contact);
-        }
 
         return new ModelAndView("redirect:/contact/list.do");
     }

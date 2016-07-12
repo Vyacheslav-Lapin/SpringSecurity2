@@ -3,7 +3,7 @@ package edu.teldir.security.objects;
 import org.springframework.security.acls.model.Permission;
 
 /**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
+ * @author Anton German &lt;AGerman@epam.com&gt;
  * @version 1.0 15.04.12
  */
 public class PermissionObject {

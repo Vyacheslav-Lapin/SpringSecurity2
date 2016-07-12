@@ -11,10 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Collection;
 import java.util.Collections;
 
-/**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
- * @version 1.0 14.04.12
- */
 @Service
 public class SecurityServiceImpl implements SecurityService {
 

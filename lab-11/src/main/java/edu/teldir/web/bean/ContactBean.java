@@ -3,7 +3,7 @@ package edu.teldir.web.bean;
 import edu.teldir.domain.entity.Contact;
 
 /**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
+ * @author Anton German &lt;AGerman@epam.com&gt;
  * @version 1.0 10.04.12
  */
 public class ContactBean implements Comparable<ContactBean> {

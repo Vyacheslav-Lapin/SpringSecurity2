@@ -2,16 +2,12 @@ package edu.teldir.security.dao.impl;
 
 import edu.teldir.security.dao.SecurityObjectDao;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport;
+import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport; // http://docs.spring.io/spring/docs/3.2.x/javadoc-api/org/springframework/jdbc/core/simple/SimpleJdbcDaoSupport.html
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 
-/**
- * @author Anton German &lt;AGerman@luxoft.com&gt;
- * @version 1.0 15.04.12
- */
 public class SecurityObjectDaoImpl extends SimpleJdbcDaoSupport implements SecurityObjectDao {
     public Collection<String> getRoles() {
         return getSimpleJdbcTemplate()
