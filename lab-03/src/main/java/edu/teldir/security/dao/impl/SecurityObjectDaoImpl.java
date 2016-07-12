@@ -2,20 +2,20 @@ package edu.teldir.security.dao.impl;
 
 import edu.teldir.security.dao.SecurityObjectDao;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport; // http://docs.spring.io/spring/docs/3.2.x/javadoc-api/org/springframework/jdbc/core/simple/SimpleJdbcDaoSupport.html
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 
-public class SecurityObjectDaoImpl extends SimpleJdbcDaoSupport implements SecurityObjectDao {
+public class SecurityObjectDaoImpl extends JdbcDaoSupport implements SecurityObjectDao {
     public Collection<String> getRoles() {
-        return getSimpleJdbcTemplate()
+        return getJdbcTemplate()
                 .query("select distinct authority from authorities order by authority", new StringRowMapper());
     }
 
     public Collection<String> getUsernames() {
-        return getSimpleJdbcTemplate()
+        return getJdbcTemplate()
                 .query("select username from users where enabled = 1 order by username", new StringRowMapper());
     }
 
